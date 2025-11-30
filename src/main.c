@@ -47,7 +47,7 @@ static const struct command {
 	/** NULL means they won't be shown in help */
 	const char *help;
 } mpc_table [] = {
-	/* command,     min, max, pipe, handler,         usage, help */
+	/* command,          min, max, pipe, handler,         usage, help */
 	{"add",              0, -1, 1, cmd_add,              "<uri>", "Add a song to the queue"},
 	{"addplaylist",      2, -1, 3, cmd_addplaylist,      "<file> <uri> ...", "Add a song to the playlist"},
 	{"albumart",         1,  1, 0, cmd_albumart,         "<uri>", "Download album art for the given song and write to stdout." },
@@ -95,6 +95,7 @@ static const struct command {
 	{"pause-if-playing", 0,  0, 0, cmd_pause_if_playing, "", "Pauses the currently playing song; exits with failure if not playing"},
 	{"play",             0,  1, 2, cmd_play,             "[<position>]", "Start playing at <position>"},
 	{"playlist",         0,  1, 0, cmd_playlist,         "[<playlist>]", "Print <playlist>"},
+	{"playlistlength",   1,  1, 0, cmd_playlistlength,   "<file>", "Display the length of the given playlist"},
 	{"prev",             0,  0, 0, cmd_prev,             "", "Play the previous song in the queue"},
 	{"prio",             2, -1, 2, cmd_prio,             "<prio> <position/range> ...", "Change song priorities in the queue"},
 	{"queued",	         0,  0, 0, cmd_queued,           "", "Show the next queued song"},
@@ -109,6 +110,7 @@ static const struct command {
 	{"search",           1, -1, 0, cmd_search,           "<type> <query>", "Search for a song"},
 	{"searchadd",        1, -1, 0, cmd_searchadd,        "<type> <query>", "Search songs and add them to the queue"},
 	{"searchplay",       1, -1, 0, cmd_searchplay,       "<pattern>", "Find and play a song in the queue"},
+	{"searchplaylist",   2,  2, 0, cmd_searchplaylist,   "<file> <expression>", "Search for songs in the given playlist"},
 	{"seek",             1,  1, 0, cmd_seek,             "[+-][HH:MM:SS]|<0-100>%", "Seeks to the specified position"},
 	{"seekthrough",      1,  1, 0, cmd_seek_through,      "[+-][HH:MM:SS]", "Seeks by an amount of time within the song and playlist"},
 	{"sendmessage",      2,  2, 0, cmd_sendmessage,      "<channel> <message>", "Send a message to the specified channel." },
