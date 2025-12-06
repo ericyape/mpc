@@ -264,7 +264,13 @@ Playlist Commands
 
 :command:`renplaylist <playlist> <new playlist>` - Rename a playlist.
 
-:command:`clearplaylist <playlist>` - Clear the playlist name (i.e. truncate playlist.m3u).
+:command:`clearplaylist <playlist>` - Clear the playlist name.
+
+:command:`searchplaylist <playlist> <expression>` - Search the playlist for songs
+   matching the expression
+
+:command:`playlistlength <playlist>` - Show the number of songs and
+   their total playtime (seconds) in the playlist
 
 Database Commands
 ^^^^^^^^^^^^^^^^^
