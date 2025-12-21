@@ -372,20 +372,28 @@ Sticker Commands
 The :command:`sticker` command allows you to get and set song
 stickers.
 
-:command:`sticker <file> set <key> <value>` - Set the value of a song
+:command:`sticker <file> set <name> <value>` - Set the value of a song
    sticker.
 
-:command:`sticker <file> get <key>` - Print the value of a song
+:command:`sticker <file> get <name>` - Print the value of a song
    sticker.
 
 :command:`sticker <file> list` - List all stickers of a song.
 
-:command:`sticker <file> delete <key>` - Delete a song sticker.
+:command:`sticker <file> delete <name>` - Delete a song sticker.
 
-:command:`sticker <dir> find <key>` - Search for stickers with the
+:command:`sticker <dir> find <name>` - Search for stickers with the
    specified name, below the specified directory.
 
+:command:`stickernames` - Display the list of unique sticker names
 
+:command:`stickertypes` - Display the list of available sticker types
+
+:command:`stickernamestypes <type>` - Display the list of unique sticker names
+   for this sticker type
+
+:command:`searchsticker <type> <uri> <name>` - Search for MPD <type>
+   entities having sticker <name> set at <uri>
 
 Output Commands
 ^^^^^^^^^^^^^^^

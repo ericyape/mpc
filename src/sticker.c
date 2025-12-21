@@ -50,7 +50,7 @@ cmd_sticker(int argc, char **argv, struct mpd_connection *conn)
 	{
 		if(argc < 4)
 		{
-			fputs("syntax: sticker <uri> set <key> <value>\n", stderr);
+			fputs("syntax: sticker <uri> set <name> <value>\n", stderr);
 			return 0;
 		}
 
@@ -62,7 +62,7 @@ cmd_sticker(int argc, char **argv, struct mpd_connection *conn)
 	{
 		if(argc < 3)
 		{
-			fputs("syntax: sticker <uri> get <key>\n", stderr);
+			fputs("syntax: sticker <uri> get <name>\n", stderr);
 			return 0;
 		}
 
@@ -74,7 +74,7 @@ cmd_sticker(int argc, char **argv, struct mpd_connection *conn)
 	{
 		if(argc < 3)
 		{
-			fputs("syntax: sticker <dir> find <key>\n", stderr);
+			fputs("syntax: sticker <dir> find <name>\n", stderr);
 			return 0;
 		}
 
@@ -84,7 +84,7 @@ cmd_sticker(int argc, char **argv, struct mpd_connection *conn)
 	} else if (strcmp(argv[1], "delete") == 0) {
 		if(argc < 2)
 		{
-			fputs("syntax: sticker <uri> delete [key]\n", stderr);
+			fputs("syntax: sticker <uri> delete [name]\n", stderr);
 			return 0;
 		}
 
@@ -106,5 +106,68 @@ cmd_sticker(int argc, char **argv, struct mpd_connection *conn)
 	else
 		fputs("error: unknown command.\n", stderr);
 
+	return 0;
+}
+
+int
+cmd_stickernames(int argc, char **argv, struct mpd_connection *conn)
+{
+	(void)argc; // silence warning about unused argument
+	(void)argv; // silence warning about unused argument
+	struct mpd_pair *pair;
+
+	mpd_send_stickernames(conn);
+
+	while ((pair = mpd_recv_pair(conn)) != NULL) {
+
+		if (!strcmp(pair->name, "name")) {
+			printf("%s\n", pair->value);
+		}
+		mpd_return_pair(conn, pair);
+	}
+
+	my_finishCommand(conn);
+	return 0;
+}
+
+int
+cmd_stickertypes(int argc, char **argv, struct mpd_connection *conn)
+{
+	(void)argc; // silence warning about unused argument
+	(void)argv; // silence warning about unused argument
+	struct mpd_pair *pair;
+
+	mpd_send_stickertypes(conn);
+
+	while ((pair = mpd_recv_pair(conn)) != NULL) {
+
+		if (!strcmp(pair->name, "stickertype")) {
+			printf("%s\n", pair->value);
+		}
+		mpd_return_pair(conn, pair);
+	}
+
+	my_finishCommand(conn);
+	return 0;
+}
+
+int
+cmd_stickernamestypes(int argc, char **argv, struct mpd_connection *conn)
+{
+	(void)argc; // silence warning about unused argument
+	const char* type = argv[0];
+	struct mpd_pair *pair;
+
+	mpd_send_stickernamestypes(conn, type);
+
+	while ((pair = mpd_recv_pair(conn)) != NULL) {
+
+		if (!strcmp(pair->name, "name")) {
+			printf("%s\n", pair->value);
+		}
+		mpd_return_pair(conn, pair);
+	}
+
+	my_finishCommand(conn);
 	return 0;
 }

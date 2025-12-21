@@ -1,5 +1,5 @@
 0.36 (not yet released)
-* add commands "tags", "playlistlength", "searchplaylist"
+* add commands "tags", "playlistlength", "searchplaylist", "stickernames", "stickertypes", "stickernamestypes"
 * concatenate multiple tag values
 * require libmpdclient 2.23 or newer
 
