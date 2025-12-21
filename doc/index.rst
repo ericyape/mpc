@@ -262,9 +262,9 @@ Playlist Commands
 :command:`moveplaylist <playlist> <from> <to>` - Moves the song at given <from> position 
    to the <to> position in the playlist.
 
-:command:`renplaylist <playlist> <new playlist>` - Rename a playlist.
+:command:`renplaylist <playlist> <new playlist>` - Rename the playlist.
 
-:command:`clearplaylist <playlist>` - Clear the playlist name.
+:command:`clearplaylist <playlist>` - Clear the playlist.
 
 :command:`searchplaylist <playlist> <expression>` - Search the playlist for songs
    matching the expression
@@ -392,8 +392,9 @@ stickers.
 :command:`stickernamestypes <type>` - Display the list of unique sticker names
    for this sticker type
 
-:command:`searchsticker <type> <uri> <name>` - Search for MPD <type>
-   entities having sticker <name> set at <uri>
+:command:`searchsticker <type> <uri> <name> <oper> <value>` - Search
+   for MPD <type> entities having sticker <name> <oper> <value> @ <uri>.
+   Valid <oper> are:: ``=``, ``>``, ``<``, ``eq``, ``gt``, ``lt``, ``contains``, ``starts_with``
 
 Output Commands
 ^^^^^^^^^^^^^^^

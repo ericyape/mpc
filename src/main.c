@@ -122,6 +122,7 @@ static const struct command {
 	{"stickernames",     0,  0, 0, cmd_stickernames,     "", "Display the list of unique sticker names"},
 	{"stickertypes",     0,  0, 0, cmd_stickertypes,     "", "Display the list of available sticker types"},
 	{"stickernamestypes",1,  1, 0, cmd_stickernamestypes,"<type>", "Display the list of unique sticker names for this sticker type"},
+	{"searchsticker",    5,  5, 0, cmd_searchsticker,    "<type> <uri> <name> <oper> <value>", "Search for MPD <type> entities having sticker <name> <oper> to <value> set at <uri>"},
 	{"stop",             0,  0, 0, cmd_stop,             "", "Stop playback"},
 	{"subscribe",        1,  1, 0, cmd_subscribe,        "<channel>", "Subscribe to the specified channel and continuously receive messages." },
 	{"tab",              1,  1, 0, cmd_tab,              "<path>", NULL},

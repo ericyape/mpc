@@ -18,5 +18,7 @@ cmd_stickertypes(int argc, char **argv, struct mpd_connection *conn);
 int
 cmd_stickernamestypes(int argc, char **argv, struct mpd_connection *conn);
 
+int
+cmd_searchsticker(int argc, char **argv, struct mpd_connection *conn);
 
 #endif
