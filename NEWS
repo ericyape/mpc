@@ -1,5 +1,8 @@
 0.36 (not yet released)
 * add commands "tags", "playlistlength", "searchplaylist", "stickernames", "stickertypes", "stickernamestypes", "searchsticker"
+* complete command "sticker" API with "playlist" & "tags" entities subcommands (get/set/delete/list/find/inc/dec)
+* fix a bug in "sticker" API "delete" subcommand where "name" parameter is mandatory
+* update documentation
 * concatenate multiple tag values
 * require libmpdclient 2.23 or newer
 

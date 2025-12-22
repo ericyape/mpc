@@ -118,7 +118,7 @@ static const struct command {
 	{"single",           0,  1, 0, cmd_single,           "<on|once|off>", "Toggle single mode, or specify state"},
 	{"stats",            0, -1, 0, cmd_stats,            "", "Display statistics about MPD"},
 	{"status",           0, -1, 0, cmd_status,           "", NULL}, /* status was added for pedantic reasons */
-	{"sticker",          2, -1, 0, cmd_sticker,          "<uri> <get|set|list|delete|find|search> [args..]", "Sticker management"},
+	{"sticker",          2, -1, 0, cmd_sticker,          "<uri> <get[-playlist|-tag]|set[-playlist|-tag]|list[-playlist|-tag]|delete[-playlist|-tag]|find[-playlist|-tag]|inc[-playlist|-tag]|dec[-playlist|-tag]> [args..]", "Sticker management"},
 	{"stickernames",     0,  0, 0, cmd_stickernames,     "", "Display the list of unique sticker names"},
 	{"stickertypes",     0,  0, 0, cmd_stickertypes,     "", "Display the list of available sticker types"},
 	{"stickernamestypes",1,  1, 0, cmd_stickernamestypes,"<type>", "Display the list of unique sticker names for this sticker type"},
